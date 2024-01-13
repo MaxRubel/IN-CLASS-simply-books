@@ -15,7 +15,9 @@ function Home() {
 
   // TODO: create a function that makes the API call to get all the books
   const getAllTheBooks = () => {
-    getBooks(user.uid).then(setBooks);
+    getBooks(user.uid).then((bookData) => {
+      setBooks(bookData);
+    });
   };
 
   // TODO: make the call to the API to get all the books on component render
@@ -34,7 +36,6 @@ function Home() {
           <BookCard key={book.firebaseKey} bookObj={book} onUpdate={getAllTheBooks} />
         ))}
       </div>
-
     </div>
   );
 }

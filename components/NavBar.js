@@ -21,7 +21,10 @@ export default function NavBar() {
             <Link passHref href="/">
               <Nav.Link>Books</Nav.Link>
             </Link>
-            <Link passHref href="/book/new">
+            <Link passHref href="/authors/view-all">
+              <Nav.Link>Authors</Nav.Link>
+            </Link>
+            <Link passHref href="/books/new">
               <Nav.Link>Create Book</Nav.Link>
             </Link>
           </Nav>
