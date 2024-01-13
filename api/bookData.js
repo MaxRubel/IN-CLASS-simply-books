@@ -21,10 +21,10 @@ const deleteBook = (firebaseKey) => new Promise((resolve, reject) => {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
-    }, 
+    },
   })
     .then((response) => response.json())
-    .then((data) => resolve((data)))
+    .then((data) => resolve(data))
     .catch(reject);
 });
 
@@ -34,7 +34,7 @@ const getSingleBook = (firebaseKey) => new Promise((resolve, reject) => {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-    }, 
+    },
   })
     .then((response) => response.json())
     .then((data) => resolve(data))
@@ -47,8 +47,8 @@ const createBook = (payload) => new Promise((resolve, reject) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-    }, 
-    body: JSON.stringify(payload)
+    },
+    body: JSON.stringify(payload),
   })
     .then((response) => response.json())
     .then((data) => resolve(data))
@@ -61,8 +61,8 @@ const updateBook = (payload) => new Promise((resolve, reject) => {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
-    }, 
-    body: JSON.stringify(payload)
+    },
+    body: JSON.stringify(payload),
   })
     .then((response) => response.json())
     .then((data) => resolve(data))
@@ -74,7 +74,7 @@ const getBooksByAuthor = (firebaseKey) => new Promise((resolve, reject) => {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-    }, 
+    },
   })
     .then((response) => response.json())
     .then((data) => resolve(Object.values(data)))
@@ -97,11 +97,5 @@ const booksOnSale = (uid) => new Promise((resolve, reject) => {
 });
 
 export {
-  getBooks,
-  createBook,
-  booksOnSale,
-  deleteBook,
-  getSingleBook,
-  updateBook,
-  getBooksByAuthor
+  getBooks, createBook, booksOnSale, deleteBook, getSingleBook, updateBook, getBooksByAuthor,
 };
